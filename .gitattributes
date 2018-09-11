@@ -1,2 +1,139 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+		int e=0,i,a,b;
+		while(e==0){ //Laço geral#FECHADO%.
+			printf("Welcome to Newt\n"); //Introduçao e menu.
+			printf("Type one of the codes below to calculate:\n");
+			printf("1-> One-dimensional movement.\n");
+			printf("2-> Two-dimensional movement.\n");
+			printf("3-> Dynamics.\n");
+			printf("4-> Energy.\n");
+			printf("5-> Momentum.\n");
+			printf("6-> Collisions.\n");
+			printf("7-> Rotation and angular momentum.\n");
+			printf("8-> Rigid bodies rotation dynamics.\n");
+			printf("9-> Universal gravitation.\n");
+			printf("10-> Inertia forces.\n");
+			scanf("%d",&i);
+			if(i<1||i>10){ //Saida. #FECHADO.
+				printf("Type a value between 1 and 10 to use Newt.\n");
+				printf("If you want to restart Newt type 0, if you don't, type any key.\n");
+				scanf("%d",&e);
+			}
+			else{ //Dentro I TODOS #FECHADOS
+				if(i==1){ //Movimento Unidimensional I 1 #FECHADO
+					printf("One-dimensional movement\n");
+					printf("Now, choose the subcode:\n");
+					printf("1-> Average speed.\n");
+					printf("2-> Instantaneous speed.\n");
+					printf("3-> Average acceleration.\n");
+					printf("4-> Uniform rectilinear movement.\n");
+					printf("5-> Uniformly varied rectilinear motion.\n");
+					printf("6-> Free fall.\n");
+					scanf("%d",&a);
+					if(a<1||a>6){ //Saida.#FECHADO.
+						printf("Type a value between 1 and 6 to use this function.\n");
+						printf("If you want to restart Newt type 0, if you don't, type any key.\n");
+						scanf("%d",&e);
+					}
+					else{ //Dentro A #FECHADO
+						double v0,a,v,d,t; //Definição de qualquer variavel que entre em formula.
+						if(a==1){ //Velocidade média.#FECHADO
+							printf("Choose the variable to be calculated:\n");
+							printf("1->Average speed.\n");
+							printf("2->Travelled distance.\n");
+							printf("3->Time spent.\n");
+							scanf("%d",&b);
+							if(b<1||b>3){ //Saida #FECHADO.
+									printf("Type a value between 1 and 3 to use this function.\n");
+									printf("If you want to restart Newt type 0, if you don't, type any key.\n");
+									scanf("%d",&e);
+							}	
+							else{ // Dentro da V.M #FECHADO.
+								if(b==1){ //Variavel 1 #FECHADO.
+									printf("Type the travelled distance in meters.\n");
+									scanf("%lf",%d);
+									printf("Type the time spent in seconds.\n");	
+									scanf("%lf",%t);
+									v = d / t;
+									printf("The average speed is: %.3lf m/s.\n",v);
+								}
+								if(b==2){ //Variavel 2 #FECHADO.
+									printf("Type the average speed in m/s.\n");
+									scanf("%lf",%v);
+									printf("Type the time spent in seconds.\n");	
+									scanf("%lf",%t);
+									d = v*t;
+									printf("The travelled distace is: %.3lf meters.\n",d);
+								}
+								else{ //Variavel 3 #FECHADO.
+									printf("Type the travelled distance in meters.\n");
+									scanf("%lf",%d);
+									printf("Type the average speed in m/s.\n");	
+									scanf("%lf",%t);
+									t = d/v;
+									printf("The time spent is: %.3lf seconds.\n",v);
+								}
+							}
+						}
+						if(a==2){ //Velocidade Instantanea.#FECHADO
+							printf("Choose the variable to be calculated:\n");
+							printf("1->Instantaneous speed.\n");
+							printf("2->Initial speed.\n");
+							printf("3->Acceleration.\n");
+							printf("4->Time spent.\n");
+							scanf("d",&b);
+							if(b<1||b>4){ //Saida.#Fechado
+								printf("Type a value between 1 and 4 to use this function.\n");
+								printf("If you want to restart Newt type 0, if you don't, type any key.\n");
+								scanf("%d",&e);
+							}
+							else{ //Dentro B #FECHADO
+								if(b==1){ //Primeira Variavel #FECHADO
+										printf("Type the initial speed in m/s.\n");
+										scanf("%lf",&v0);
+										printf("Type the acceleration in m/s^2.\n");
+										scanf("%lf",&a);
+										printf("Type the time spent in seconds.\n");
+										scanf("lf",&t);
+										v = v0+ a*t;
+										printf("The speed is: %.3lf m/s.\n",v);
+								}	
+								if(b==2){ //Segunda Variavel #FECHADO
+										printf("Type the final speed in m/s.\n");
+										scanf("%lf",&v);
+										printf("Type the acceleration in m/s^2.\n");
+										scanf("%lf",&a);
+										printf("Type the time spent in seconds.\n");
+										scanf("lf",&t);
+										v0 = v- a*t;
+										printf("The initial speed is: %.3lf m/s.\n",v0);
+								}
+								if(b==3){ //Terceira Variavel#FECHADO
+										printf("Type the initial speed is: m/s.\n");
+										scanf("%lf",&v0);
+										printf("Type the final speed in m/s.\n");
+										scanf("%lf",&v);
+										printf("Type the time spent in seconds.\n");
+										scanf("lf",&t);
+										a = (v - v0)/t;
+										printf("The acceleration is: %.3lf m/s.\n",a);
+								}
+								else{ // Quarta Variavel #FECHADO
+										printf("Type the initial speed is: m/s.\n");
+										scanf("%lf",&v0);
+										printf("Type the final speed in m/s.\n");
+										scanf("%lf",&v);
+										printf("Type the acceleration im m/s^2.\n");
+										scanf("lf",&a);
+										t = (v - v0)/a;
+										printf("The time spent is: %.3lf m/s.\n",t);
+								}
+							}
+						}
+					}
+			}
+		}
+}
